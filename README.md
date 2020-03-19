@@ -10,7 +10,7 @@ import { function } from "dark-utils";
 | --------------- | ------------------------------------ | --------------- | -------------------- |
 | tryFunc         | 执行方法 fn(...params)               | (fn, ...params) | fn 的执行结果        |
 | tryPromiseFunc  | 执行 promise 方法                    | (fn, ...params) | promise 对象         |
-| getParamsUrl    | 返回路径 location.serach 的键值对    | 无              | URLSearchParams 对象 |
+| searchParams    | 返回路径 location.serach 的键值对    | 无              | URLSearchParams 对象 |
 | createRandomStr | 生成 10 位包含字母或数字的随机字符串 | 无              | string               |
 
 ### struct:类型结构方法

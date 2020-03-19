@@ -16,9 +16,8 @@ export {
 export {
   tryFunc,
   tryPromiseFunc,
-  getParamsUrl,
   searchParams,
-  createNonceStr
+  createRandomStr
 } from "./util";
 
 // import event from './event'
