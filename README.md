@@ -15,14 +15,14 @@ import { function } from "dark-utils";
 
 ### struct:类型结构方法
 
-| 方法名     | 作用               | 参数         | 返回       |
-| ---------- | ------------------ | ------------ | ---------- |
-| isArray    | 是否是一个数组     | (value: any) | Boolean    |
-| isObject   | 是否是一个对象     | (value: any) | Boolean    |
-| isEmtpyObj | 是否是一个空对象   | (value: any) | Boolean    |
-| isEmtpyArr | 是否是一个空数组   | (value: any) | Boolean    |
-| isNumber   | 是否是一个数字     | (value: any) | Boolean    |
-| deepCopy   | 转字符串实现深复制 | (value: any) | any |
+| 方法名     | 作用               | 参数         | 返回    |
+| ---------- | ------------------ | ------------ | ------- |
+| isArray    | 是否是一个数组     | (value: any) | Boolean |
+| isObject   | 是否是一个对象     | (value: any) | Boolean |
+| isEmtpyObj | 是否是一个空对象   | (value: any) | Boolean |
+| isEmtpyArr | 是否是一个空数组   | (value: any) | Boolean |
+| isNumber   | 是否是一个数字     | (value: any) | Boolean |
+| deepCopy   | 转字符串实现深复制 | (value: any) | any     |
 
 ### file:处理文件的方法
 
@@ -33,3 +33,21 @@ import { function } from "dark-utils";
 | blobToFile          | Blob 对象转化为一个文件         | Blob 对象            | File 对象 |
 | fileOrBlobToDataURL | File 或 Blob 对象转化为 dataURL | File 对象\|Blob 对象 | Data URL  |
 | fileToBlob          | File 对象转化为 Blob 对象       | File 对象            | Blob 对象 |
+
+### dom:处理 DOM 的方法
+
+| 方法名          | 作用                      | 参数                            | 返回    |
+| --------------- | ------------------------- | ------------------------------- | ------- |
+| stopPropagation | 防止冒泡                  | 无                              | 无      |
+| preventDefault  | 取消默认事件              | 无                              | 无      |
+| readClass       | 查看指定 class 名是否存在 | (ele:Element, className:String) | Boolean |
+| addClass        | 添加样式                  | 无                              | 无      |
+| removeClass     | 删除样式                  | 无                              | 无      |
+| replaceClass    | 替换样式                  | 无                              | 无      |
+
+| getScrollHeight | 获取当前元素的滚动高度， 默认（不传参）为整个页面的滚动高度 | (ele:Element) | 滚动高度: Number |
+| getClientHeight | 获取当前元素的可视高度， 默认（不传参）为整个页面的可视高度 | (ele:Element) | 可视高度: Number |
+
+| getScrollTop | 获取当前元素的滚动值， 默认（不传参）为整个页面的滚动值 | (ele:Element) | 当前元素的滚动值: Number |
+| getParentElement | 获取父级元素 | (ele:Element) | 父级元素: Element |
+| loasdScript | 加载 script 文件 | (src:String) | Promise |

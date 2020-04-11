@@ -10,7 +10,14 @@ export {
   preventDefault,
   readClass,
   addClass,
-  removeClass
+  removeClass,
+  getScrollTop,
+  getScrollHeight,
+  getClientHeight,
+  getParentWithStyle,
+  getParentElement,
+  getElementStyleValue,
+  loasdScript
 } from "./dom";
 
 export {
