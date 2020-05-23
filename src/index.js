@@ -17,7 +17,8 @@ export {
   getParentWithStyle,
   getParentElement,
   getElementStyleValue,
-  loasdScript
+  loasdScript,
+  nextElement
 } from "./dom";
 
 export {

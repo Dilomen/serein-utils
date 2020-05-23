@@ -1,11 +1,12 @@
 {
   "name": "dark-utils",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "一些开发中常用的方法",
   "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "publish": "yarn build && npm publish"
   },
   "files": [
     "lib"

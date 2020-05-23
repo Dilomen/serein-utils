@@ -36,18 +36,17 @@ import { function } from "dark-utils";
 
 ### dom:处理 DOM 的方法
 
-| 方法名          | 作用                      | 参数                            | 返回    |
-| --------------- | ------------------------- | ------------------------------- | ------- |
-| stopPropagation | 防止冒泡                  | 无                              | 无      |
-| preventDefault  | 取消默认事件              | 无                              | 无      |
-| readClass       | 查看指定 class 名是否存在 | (ele:Element, className:String) | Boolean |
-| addClass        | 添加样式                  | 无                              | 无      |
-| removeClass     | 删除样式                  | 无                              | 无      |
-| replaceClass    | 替换样式                  | 无                              | 无      |
-
-| getScrollHeight | 获取当前元素的滚动高度， 默认（不传参）为整个页面的滚动高度 | (ele:Element) | 滚动高度: Number |
-| getClientHeight | 获取当前元素的可视高度， 默认（不传参）为整个页面的可视高度 | (ele:Element) | 可视高度: Number |
-
-| getScrollTop | 获取当前元素的滚动值， 默认（不传参）为整个页面的滚动值 | (ele:Element) | 当前元素的滚动值: Number |
-| getParentElement | 获取父级元素 | (ele:Element) | 父级元素: Element |
-| loasdScript | 加载 script 文件 | (src:String) | Promise |
+| 方法名           | 作用                                                        | 参数                            | 返回                     |
+| ---------------- | ----------------------------------------------------------- | ------------------------------- | ------------------------ |
+| stopPropagation  | 防止冒泡                                                    | 无                              | 无                       |
+| preventDefault   | 取消默认事件                                                | 无                              | 无                       |
+| readClass        | 查看指定 class 名是否存在                                   | (ele:Element, className:String) | Boolean                  |
+| addClass         | 添加样式                                                    | 无                              | 无                       |
+| removeClass      | 删除样式                                                    | 无                              | 无                       |
+| replaceClass     | 替换样式                                                    | 无                              | 无                       |
+| getScrollHeight  | 获取当前元素的滚动高度， 默认（不传参）为整个页面的滚动高度 | (ele:Element)                   | 滚动高度: Number         |
+| getClientHeight  | 获取当前元素的可视高度， 默认（不传参）为整个页面的可视高度 | (ele:Element)                   | 可视高度: Number         |
+| getScrollTop     | 获取当前元素的滚动值， 默认（不传参）为整个页面的滚动值     | (ele:Element)                   | 当前元素的滚动值: Number |
+| getParentElement | 获取父级元素                                                | (ele:Element)                   | 父级元素: Element        |
+| loasdScript      | 加载 script 文件                                            | (src:String)                    | Promise                  |
+| nextElement      | 下一个兄弟元素节点(不包括文本和注释节点)                    | (ele:Element)                   | (ele:Element)            |
