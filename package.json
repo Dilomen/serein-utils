@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "publish": "yarn build && npm publish"
+    "publish": "yarn build && npm publish",
+    "eslint": "eslint ./src/"
   },
   "files": [
     "lib"
@@ -17,6 +18,7 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "eslint": "^7.1.0",
     "rollup": "^2.0.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",

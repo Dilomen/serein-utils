@@ -25,7 +25,10 @@ export {
   tryFunc,
   tryPromiseFunc,
   searchParams,
-  createRandomStr
+  createRandomStr,
+  isMobile,
+  debounce,
+  throttle
 } from "./util";
 
 // import event from './event'

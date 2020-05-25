@@ -39,7 +39,9 @@ export const dataURLToBlob = dataurl => {
  * @param {String} type
  */
 export const blobToFile = (blob, filename = "file", type) => {
-  !type && console.error("请传入转化文件的类型type!!!");
+  if (!type) {
+    throw new Error("请传入转化文件的类型type!!!")
+  }
   return new File([blob], filename, {
     type
   });
@@ -52,7 +54,7 @@ export const blobToFile = (blob, filename = "file", type) => {
 export const fileOrBlobToDataURL = fileOrBlob => {
   var fileReader = new FileReader();
   fileReader.readAsDataURL(fileOrBlob);
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     fileReader.onload = function (e) {
       resolve(e.target.result);
     };
