@@ -1,7 +1,7 @@
 ### 所有的方法均使用以下方式引入
 
 ```js
-import { function } from "dark-utils";
+import { function } from 'dark-utils';
 ```
 
 ### utils:通用方法
@@ -15,6 +15,7 @@ import { function } from "dark-utils";
 | isMobile        | 是否是移动端                         | 无              | boolean              |
 | debounce        | 防抖                                 | (fn, delay)     | 无                   |
 | throttle        | 节流                                 | (fn, delay)     | 无                   |
+| isDateFormat    | 是否是日期格式                       | (data)          | boolean              |
 
 ### struct:类型结构方法
 
@@ -53,3 +54,4 @@ import { function } from "dark-utils";
 | getParentElement | 获取父级元素                                                | (ele:Element)                   | 父级元素: Element        |
 | loasdScript      | 加载 script 文件                                            | (src:String)                    | Promise                  |
 | nextElement      | 下一个兄弟元素节点(不包括文本和注释节点)                    | (ele:Element)                   | (ele:Element)            |
+| getElementStyle  | 获取元素的样式值                                            | (el, attr, pseudoElt:伪元素)    | style 值                 |

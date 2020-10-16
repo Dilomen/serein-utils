@@ -163,7 +163,8 @@ export function loasdScript(src) {
     script.src = src;
 
     script.onload = resolve;
-    script.onerror = error => reject(new Error("Unable to load " + src + ": " + error));
+    script.onerror = (error) =>
+      reject(new Error("Unable to load " + src + ": " + error));
 
     document.body.appendChild(script);
   });
@@ -173,10 +174,10 @@ export function loasdScript(src) {
  * 获取下一个兄弟元素
  * @param {*} ele 指定元素
  */
-export function nextElement (el) {
+export function nextElement(el) {
   return el.nextElementSibling || nextSiblingWithElement();
   // 过滤文本，注释节点
-  function nextSiblingWithElement () {
+  function nextSiblingWithElement() {
     var sibling = el;
     do {
       sibling = sibling.nextSibling;
@@ -185,7 +186,23 @@ export function nextElement (el) {
   }
 }
 
-
+/**
+ * 获取元素的样式值
+ * @export
+ * @param {Element} el 指定元素
+ * @param {string} attr 指定样式属性
+ * @param {string} pseudoElt 可选 伪元素
+ */
+export function getElementStyle(el, attr, pseudoElt) {
+  if (pseudoElt) {
+    let obj = getComputedStyle(el, pseudoElt);
+    return obj[attr];
+  }
+  if (el && el.style && el.style[attr]) {
+    return el.style[attr];
+  }
+  return (getComputedStyle(el) || {})[attr];
+}
 
 /**
  * 代理加载图片

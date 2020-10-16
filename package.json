@@ -2,7 +2,7 @@
   "name": "dark-utils",
   "version": "1.0.5",
   "description": "一些开发中常用的方法",
-  "main": "./lib/index.js",
+  "main": "./es/index.js",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
@@ -10,7 +10,7 @@
     "eslint": "eslint ./src/"
   },
   "files": [
-    "lib"
+    "es"
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",

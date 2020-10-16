@@ -14,7 +14,7 @@ module.exports = {
   input: "./src/index.js",
   output: [{
     name: 'index.js',
-    file: './lib/index.js',
+    file: './es/index.js',
     format: 'es',
     minify: true,
   }, {

@@ -105,6 +105,17 @@ export const throttle = (fn, delay = 500) => {
 }
 
 /**
+ * 判断是否是日期格式
+ * @param {String} data 
+ */
+export function isDateFormat (data) {
+  if(!data || isNaN(Date.parse(data))){
+    return false
+  }
+  return true
+}
+
+/**
  * 判断是否是移动端
  */
 export function isMobile() {

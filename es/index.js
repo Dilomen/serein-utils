@@ -48,7 +48,11 @@ var dataURLToBlob = function dataURLToBlob(dataurl) {
 var blobToFile = function blobToFile(blob) {
   var filename = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "file";
   var type = arguments.length > 2 ? arguments[2] : undefined;
-  !type && console.error("请传入转化文件的类型type!!!");
+
+  if (!type) {
+    throw new Error("请传入转化文件的类型type!!!");
+  }
+
   return new File([blob], filename, {
     type: type
   });
@@ -61,7 +65,7 @@ var blobToFile = function blobToFile(blob) {
 var fileOrBlobToDataURL = function fileOrBlobToDataURL(fileOrBlob) {
   var fileReader = new FileReader();
   fileReader.readAsDataURL(fileOrBlob);
-  return new Promise(function (resolve) {
+  return new Promise(function (resolve, reject) {
     fileReader.onload = function (e) {
       resolve(e.target.result);
     };
@@ -224,6 +228,11 @@ function loasdScript(src) {
     document.body.appendChild(script);
   });
 }
+/**
+ * 获取下一个兄弟元素
+ * @param {*} ele 指定元素
+ */
+
 function nextElement(el) {
   return el.nextElementSibling || nextSiblingWithElement(); // 过滤文本，注释节点
 
@@ -266,6 +275,56 @@ function nextElement(el) {
 //     element.setAttribute(src, element.getAttribute("data-src"));
 //   }
 // }
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+var arrayWithHoles = _arrayWithHoles;
+
+function _iterableToArrayLimit(arr, i) {
+  if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+    return;
+  }
+
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+  var _e = undefined;
+
+  try {
+    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+var iterableToArrayLimit = _iterableToArrayLimit;
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}
+
+var nonIterableRest = _nonIterableRest;
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+}
+
+var slicedToArray = _slicedToArray;
 
 /**
  * 执行方法
@@ -320,7 +379,56 @@ var tryPromiseFunc = function tryPromiseFunc(func) {
  * @return {URLSearchParams} 返回一个实例
  */
 
-var searchParams = new URLSearchParams(location.search.replace(/\?/gi, ""));
+var searchParams = function searchParams() {
+  var params = {};
+  var search = location.search;
+  if (!search) return {};
+
+  if (window.URLSearchParams) {
+    var options = new URLSearchParams(search);
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = options.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var key = _step.value;
+        params[key] = options.get(key);
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+          _iterator["return"]();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    return params;
+  }
+
+  search = search.substring(1, search.length);
+  search = search.split('&');
+  search.forEach(function (item) {
+    item = item.split('=');
+
+    var _item = item,
+        _item2 = slicedToArray(_item, 2),
+        key = _item2[0],
+        value = _item2[1];
+
+    if (!params[key]) {
+      params[key] = value;
+    }
+  });
+  return params;
+};
 /**
  * 生成10位包含字母或数字的随机字符串
  */
@@ -328,6 +436,96 @@ var searchParams = new URLSearchParams(location.search.replace(/\?/gi, ""));
 var createRandomStr = function createRandomStr() {
   return Math.random().toString(36).slice(2);
 };
+/**
+ * 防抖:在一定时间内再次触发，会重新计算执行时间
+ * @param {Function} fn 
+ * @param {Number} delay 
+ */
+
+var debounce = function debounce(fn) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var timer;
+  return function () {
+    var _this = this;
+
+    for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+      args[_key3] = arguments[_key3];
+    }
+
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(_this, args);
+    }, delay);
+  };
+};
+/**
+ * 节流:一段时间内只能执行一次
+ * @param {Function} fn 
+ * @param {Number} delay 
+ */
+
+var throttle = function throttle(fn) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var last;
+  return function () {
+    var now = Date.now();
+
+    for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+      args[_key4] = arguments[_key4];
+    }
+
+    if (!last) {
+      fn.apply(this, args);
+      last = now;
+      return;
+    }
+
+    if (last + delay <= now) {
+      fn.apply(this, args);
+      last = now;
+    }
+  };
+};
+/**
+ * 判断是否是移动端
+ */
+
+function isMobile() {
+  var mobileArry = ["iPhone", "iPad", "Android", "Windows Phone", "BB10; Touch", "BB10; Touch", "PlayBook", "Nokia"];
+  var ua = navigator.userAgent;
+  var res = mobileArry.filter(function (arr) {
+    return ua.indexOf(arr) > 0;
+  });
+  return res.length > 0;
+}
+/**
+ * 注册事件
+ * @param Object {注册名称:注册事件}
+ */
+// export function emitter(options) {
+//   if (!isObject(options)) throw new Error("请传入一个对象");
+//   let listeners = {};
+//   function on(name, fn) {
+//     listeners[name] = fn;
+//   }
+//   function emit(name) {
+//     if (!(name in listeners)) {
+//       throw new Error("不存在");
+//     }
+//     let fns = listeners[name];
+//     if (isArray(fns)) {
+//       fns.forEach(fn => fn());
+//     } else {
+//       fns();
+//     }
+//   }
+//   Object.keys(options).forEach(key => {
+//     on(key, options[key]);
+//   });
+//   return {
+//     emit
+//   };
+// }
 
 var toString = Object.prototype.toString; // 是否是一个数组
 
@@ -355,4 +553,4 @@ var deepCopy = function deepCopy(value) {
   return JSON.parse(JSON.stringify(value));
 };
 
-export { addClass, blobToFile, createRandomStr, dataURLToBlob, dataURLtoFile, deepCopy, fileOrBlobToDataURL, fileToBlob, getClientHeight, getElementStyleValue, getParentElement, getParentWithStyle, getScrollHeight, getScrollTop, isArray, isEmtpyArr, isEmtpyObj, isNumber, isObject, loasdScript, nextElement, preventDefault, readClass, removeClass, searchParams, stopPropagation, tryFunc, tryPromiseFunc };
+export { addClass, blobToFile, createRandomStr, dataURLToBlob, dataURLtoFile, debounce, deepCopy, fileOrBlobToDataURL, fileToBlob, getClientHeight, getElementStyleValue, getParentElement, getParentWithStyle, getScrollHeight, getScrollTop, isArray, isEmtpyArr, isEmtpyObj, isMobile, isNumber, isObject, loasdScript, nextElement, preventDefault, readClass, removeClass, searchParams, stopPropagation, throttle, tryFunc, tryPromiseFunc };

@@ -28,7 +28,8 @@ export {
   createRandomStr,
   isMobile,
   debounce,
-  throttle
+  throttle,
+  isDateFormat
 } from "./util";
 
 // import event from './event'
