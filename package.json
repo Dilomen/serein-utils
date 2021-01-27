@@ -1,8 +1,8 @@
 {
   "name": "serein-utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "一些开发中常用的方法",
-  "main": "./es/index.js",
+  "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
     "build": "node build/index.js && rollup -c",
@@ -10,7 +10,7 @@
     "eslint": "eslint ./src/"
   },
   "files": [
-    "es"
+    "lib"
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",

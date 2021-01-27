@@ -6,22 +6,22 @@ module.exports = {
   input: "./index.js",
   output: [{
     name: 'index.js',
-    file: 'dist/index.esm.js',
+    file: 'lib/index.esm.js',
     format: 'es',
     minify: true,
   }, {
     name: 'index.js',
-    file: 'dist/index.umd.js',
+    file: 'lib/index.umd.js',
     format: 'umd',
     minify: true,
   }, {
     name: 'index.js',
-    file: 'dist/index.cjs.js',
+    file: 'lib/index.cjs.js',
     format: 'cjs',
     minify: true,
   }, {
     name: 'sereinUtils',
-    file: 'dist/index.js',
+    file: 'lib/index.js',
     format: 'iife',
     minify: true,
   }],

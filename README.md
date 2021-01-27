@@ -1,7 +1,7 @@
 ### 所有的方法均使用以下方式引入
 
 ```js
-import { function } from 'dark-utils';
+import { function } from 'serein-utils';
 ```
 
 ### utils:通用方法
