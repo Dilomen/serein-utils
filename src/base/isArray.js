@@ -8,7 +8,7 @@ const isArray = value => {
   if (Array.isArray) {
     return Array.isArray(value)
   }
-  return toString.call(value) === "[object Array]"
+  return toString(value) === "[object Array]"
 }
 
 export default isArray

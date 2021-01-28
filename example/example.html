@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<script src="../dist/index.js"></script>
+<script src="../lib/index.js"></script>
 <body>
   
 </body>
 <script>
   console.log(sereinUtils)
+  const a = {
+    c: 1
+  }
+  const b = {}
+  console.log(sereinUtils.diff(a, b))
+  // const a = {
+  //   c: 1
+  // }
+  // const b = {}
+  console.log(sereinUtils.diff(b, a))
 </script>
 </html>
