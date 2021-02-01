@@ -10,6 +10,7 @@
            v-for="secondMenu in firstMenu.submenus"
            :key="secondMenu.url">
         <p class="menus-text"
+           :class="{active: secondMenu.name === $route.name}"
            @click="handleRouterLink(secondMenu.name)">
           {{ secondMenu.name }}
         </p>
@@ -38,8 +39,12 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.hover-test {
+  border-radius: 2px;
+  color: #333;
+}
 .menus-wrap {
-  width: 250px;
+  min-width: 250px;
   box-sizing: border-box;
   height: calc(100vh - 65px);
   border-right: 1px solid #e2e8f0;
@@ -54,19 +59,22 @@ export default {
   .second-menus {
     font-weight: normal;
     font-size: 16px;
-    padding-left: 5px;
-    &:hover {
-      background: rgba(49, 151, 149, 0.733);
-      border-radius: 4px;
-    }
     .menus-text {
       color: rgb(113, 128, 150);
       font-weight: 600;
-      padding: 5px;
+      padding: 5px 5px 5px 10px;
       word-break: break-all;
       &:hover {
-        color: #333;
+        @extend .hover-test;
         cursor: pointer;
+        background: rgba(49, 151, 149, 0.733);
+      }
+      &.active {
+        @extend .hover-test;
+        background: rgba(49, 151, 149, 0.233);
+        &:hover {
+          background: rgba(49, 151, 149, 0.733);
+        }
       }
     }
   }

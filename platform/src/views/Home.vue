@@ -39,11 +39,11 @@ export default {
 
 <style lang="scss">
 .container {
-  // height: calc(100vh - 130px);
-  height: calc(100vh - 110px);
+  height: calc(100vh - 130px);
   overflow-y: scroll;
-  padding: 24px;
+  padding: 2rem 5rem;
   border-bottom: 0.5px solid #e2e8f0;
+  width: 100%;
 }
 .container-wrap {
   display: flex;
@@ -57,7 +57,7 @@ export default {
 }
 .blank {
   filter: invert(1) hue-rotate(180deg);
-  background-color: #fff;
+  background-color: #ECEFF3;
   transition: all 300ms;
 }
 </style>

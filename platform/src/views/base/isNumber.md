@@ -1,6 +1,6 @@
-# isArray
+# isNumber
 
-判断是否数组
+判断是否是 Number 类型
 
 | 参数             | 返回    | 描述               |
 | ---------------- | ------- | ------------------ |
@@ -9,18 +9,18 @@
 ## 使用
 
 ```js
-import { isArray } from 'serein-utils';
-isArray(obj);
+import { isNumber } from 'serein-utils';
+isNumber(obj);
 ```
 
 ## 例子
 
 ```js
-const a = 1;
-const result = isArray(a); // false
+const string = 'string';
+isNumber(string); // false
 ```
 
 ```js
-const arr = [1, 2, 3];
-const result = isArray(arr); // true
+const number = 123;
+isNumber(number); // true
 ```

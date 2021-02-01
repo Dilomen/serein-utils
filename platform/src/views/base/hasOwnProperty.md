@@ -1,16 +1,16 @@
 # hasOwnProperty
 
-判断是否是对象的自身属性
+> 判断是否是对象的自身属性
 
-| 传参                   | 结果   |
-| ---------------------- | ------ |
-| (obj 对象，key 属性名) | Object |
+| 参数                   | 返回    | 描述               |
+| ---------------------- | ------- | ------------------ |
+| (**value**: any, **key**: String) | Boolean | true是 false不是 |  |
 
 ## 使用
 
 ```js
 import { hasOwnProperty } from 'serein-utils';
-hasOwnProperty(obj);
+hasOwnProperty(obj, key);
 ```
 
 ## 例子

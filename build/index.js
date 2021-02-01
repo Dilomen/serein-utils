@@ -23,4 +23,17 @@ const filePath = path.resolve(process.cwd(), './src')
 dependenyFile(filePath)
 str += `export { ${dependencies.join(',\n')} }`
 
+str += `
+function install(Vue) {
+  ${
+  dependencies.reduce((str, fn) => {
+    str += `  Vue.prototype._${fn} = ${fn}\n`
+    return str
+  }, '')
+  }
+}
+
+export default install
+`
+
 fs.writeFileSync(path.resolve(process.cwd(), './index.js'), str, 'utf-8')

@@ -1,6 +1,6 @@
-# isArray
+# isObject
 
-判断是否数组
+判断是否对象
 
 | 参数             | 返回    | 描述               |
 | ---------------- | ------- | ------------------ |
@@ -9,18 +9,18 @@
 ## 使用
 
 ```js
-import { isArray } from 'serein-utils';
-isArray(obj);
+import { isObject } from 'serein-utils';
+isObject(obj);
 ```
 
 ## 例子
 
 ```js
-const a = 1;
-const result = isArray(a); // false
+const arr = [];
+const result = isObject(arr); // false
 ```
 
 ```js
-const arr = [1, 2, 3];
-const result = isArray(arr); // true
+const obj = {};
+const result = isObject(obj); // true
 ```

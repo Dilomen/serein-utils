@@ -1,6 +1,6 @@
-# isArray
+# isMap
 
-判断是否数组
+判断是否是 Map 类型
 
 | 参数             | 返回    | 描述               |
 | ---------------- | ------- | ------------------ |
@@ -9,18 +9,23 @@
 ## 使用
 
 ```js
-import { isArray } from 'serein-utils';
-isArray(obj);
+import { isMap } from 'serein-utils';
+isMap(obj);
 ```
 
 ## 例子
 
 ```js
-const a = 1;
-const result = isArray(a); // false
+const obj = {};
+isMap(obj); // false
 ```
 
 ```js
-const arr = [1, 2, 3];
-const result = isArray(arr); // true
+const string = 'string';
+isMap(string); // false
+```
+
+```js
+const map = new Map();
+isMap(map); // true
 ```
