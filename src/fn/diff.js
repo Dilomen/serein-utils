@@ -1,10 +1,10 @@
-import toString from './base/toString'
-import isArray from './base/isArray'
-import isMap from './base/isMap'
-import isObject from './base/isObject'
-import isSet from './base/isSet'
-import hasOwnProperty from './base/hasOwnProperty'
-import isFrozen from './base/isFrozen'
+import toString from '../base/toString'
+import isArray from '../base/isArray'
+import isMap from '../base/isMap'
+import isObject from '../base/isObject'
+import isSet from '../base/isSet'
+import hasOwnProperty from '../base/hasOwnProperty'
+import isFrozen from '../base/isFrozen'
 
 let diffContent = []
 /**

@@ -5,10 +5,12 @@
   "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
+    "start": "cd platform && yarn serve",
     "build": "node build/index.js && rollup -c",
     "publish": "yarn build && npm publish",
     "eslint": "eslint ./src/",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "bash deploy.sh"
   },
   "files": [
     "lib"

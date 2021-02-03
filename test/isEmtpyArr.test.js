@@ -1,4 +1,4 @@
-import isEmtpyArr from '../src/base/isEmtpyArr'
+import isEmtpyArr from '../src/base/isEmptyArr'
 
 test('test isEmtpyArr', () => {
   const arr1 = [1, 2, 3];

@@ -4,13 +4,20 @@
          src="../assets/logo.png"
          alt="">
     <div class="header-content">
+      <div class="search-wrap">
+        <input />
+        <!-- <div class="options-wrap">
+          <div class="options"
+               v-for="item in 10"
+               :key="item">324234234</div>
+        </div> -->
+      </div>
       <input class="ios-switch"
              type="checkbox"
              value="0"
              :checked="checked"
              @change="handleChange">
     </div>
-
   </div>
 </template>
 <script>
@@ -35,7 +42,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="postcss">
+<style scoped lang="scss">
 .header {
   display: flex;
   align-items: center;
@@ -52,6 +59,28 @@ export default {
   flex: 1;
   height: 100%;
   align-items: center;
+  .search-wrap {
+    position: relative;
+    z-index: 1000;
+    input {
+      padding: 10px;
+      width: 200px;
+      border-radius: 20px;
+      border: 1px solid rgb(42, 112, 2);
+      outline: 0;
+    }
+    .options-wrap {
+      position: absolute;
+      width: 100%;
+      .options {
+        height: 40px;
+        line-height: 40px;
+        background: rgb(160, 116, 116);
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
 }
 .btn,
 .ios-switch::before,

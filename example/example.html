@@ -12,14 +12,14 @@
 
 </body>
 <script>
-  console.log(sereinUtils)
-  const obj = {
-    a: 12,
-    b: 1,
-    c: 1
-  };
-  const result = sereinUtils.hasOwnProperty(obj);
-  console.log(result)
+  function test(a, b) {
+    console.log(a + b);
+  }
+  const fn = sereinUtils.randomStr(12)
+  console.log(fn)
+  // setTimeout(() => {
+  //   fn('Hello', ' World'); // Hello World
+  // }, 600);
 </script>
 
 </html>

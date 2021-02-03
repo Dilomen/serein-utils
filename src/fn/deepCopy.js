@@ -1,4 +1,4 @@
-import isArray from './base/isArray'
+import isArray from '../base/isArray'
 
 /**
  * 通过proxy代理，实现深拷贝

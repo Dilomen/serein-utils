@@ -1,4 +1,4 @@
-import diff from '../src/diff'
+import diff from '../src/fn/diff'
 
 test('test diff delete field', () => {
   const a = {}

@@ -1,17 +1,14 @@
 import hasOwnProperty from './src/base/hasOwnProperty.js'
 import isArray from './src/base/isArray.js'
 import isDate from './src/base/isDate.js'
-import isEmtpyArr from './src/base/isEmtpyArr.js'
-import isEmtpyObj from './src/base/isEmtpyObj.js'
+import isEmptyArr from './src/base/isEmptyArr.js'
+import isEmptyObj from './src/base/isEmptyObj.js'
 import isFrozen from './src/base/isFrozen.js'
 import isMap from './src/base/isMap.js'
 import isNumber from './src/base/isNumber.js'
 import isObject from './src/base/isObject.js'
 import isSet from './src/base/isSet.js'
 import toString from './src/base/toString.js'
-import debounce from './src/debounce.js'
-import deepCopy from './src/deepCopy.js'
-import diff from './src/diff.js'
 import addClass from './src/dom/addClass.js'
 import getElementStyle from './src/dom/getElementStyle.js'
 import getElementStyleValue from './src/dom/getElementStyleValue.js'
@@ -31,70 +28,68 @@ import dataURLToBlob from './src/file/dataURLToBlob.js'
 import dataURLtoFile from './src/file/dataURLtoFile.js'
 import fileOrBlobToDataURL from './src/file/fileOrBlobToDataURL.js'
 import fileToBlob from './src/file/fileToBlob.js'
+import debounce from './src/fn/debounce.js'
+import deepCopy from './src/fn/deepCopy.js'
+import diff from './src/fn/diff.js'
+import randomStr from './src/fn/randomStr.js'
+import throttle from './src/fn/throttle.js'
+import tryFunc from './src/fn/tryFunc.js'
+import tryPromiseFunc from './src/fn/tryPromiseFunc.js'
+import isBrower from './src/isBrower.js'
 import isMobile from './src/isMobile.js'
 import queryAnalysis from './src/queryAnalysis.js'
-import randomStr from './src/randomStr.js'
-import sereinInstall from './src/sereinInstall.js'
-import throttle from './src/throttle.js'
-import tryFunc from './src/tryFunc.js'
-import tryPromiseFunc from './src/tryPromiseFunc.js'
-export {
-  hasOwnProperty,
-  isArray,
-  isDate,
-  isEmtpyArr,
-  isEmtpyObj,
-  isFrozen,
-  isMap,
-  isNumber,
-  isObject,
-  isSet,
-  toString,
-  debounce,
-  deepCopy,
-  diff,
-  addClass,
-  getElementStyle,
-  getElementStyleValue,
-  getParentElement,
-  getParentWithStyle,
-  getScrollHeight,
-  getScrollTop,
-  loasdScript,
-  nextElement,
-  preventDefault,
-  readClass,
-  removeClass,
-  replaceClass,
-  stopPropagation,
-  blobToFile,
-  dataURLToBlob,
-  dataURLtoFile,
-  fileOrBlobToDataURL,
-  fileToBlob,
-  isMobile,
-  queryAnalysis,
-  randomStr,
-  sereinInstall,
-  throttle,
-  tryFunc,
-  tryPromiseFunc
-}
-function install (Vue) {
-  Vue.prototype._hasOwnProperty = hasOwnProperty
+export { hasOwnProperty,
+isArray,
+isDate,
+isEmptyArr,
+isEmptyObj,
+isFrozen,
+isMap,
+isNumber,
+isObject,
+isSet,
+toString,
+addClass,
+getElementStyle,
+getElementStyleValue,
+getParentElement,
+getParentWithStyle,
+getScrollHeight,
+getScrollTop,
+loasdScript,
+nextElement,
+preventDefault,
+readClass,
+removeClass,
+replaceClass,
+stopPropagation,
+blobToFile,
+dataURLToBlob,
+dataURLtoFile,
+fileOrBlobToDataURL,
+fileToBlob,
+debounce,
+deepCopy,
+diff,
+randomStr,
+throttle,
+tryFunc,
+tryPromiseFunc,
+isBrower,
+isMobile,
+queryAnalysis }
+function install(Vue) {
+    Vue.prototype._hasOwnProperty = hasOwnProperty
   Vue.prototype._isArray = isArray
   Vue.prototype._isDate = isDate
-  Vue.prototype._isEmtpyArr = isEmtpyArr
-  Vue.prototype._isEmtpyObj = isEmtpyObj
+  Vue.prototype._isEmptyArr = isEmptyArr
+  Vue.prototype._isEmptyObj = isEmptyObj
   Vue.prototype._isFrozen = isFrozen
   Vue.prototype._isMap = isMap
   Vue.prototype._isNumber = isNumber
   Vue.prototype._isObject = isObject
   Vue.prototype._isSet = isSet
   Vue.prototype._toString = toString
-  Vue.prototype._debounce = debounce
-  Vue.prototype._deepCopy = deepCopy
-  Vue.prototype._diff = diff
   Vue.prototype._addClass = addClass
   Vue.prototype._getElementStyle = getElementStyle
   Vue.prototype._getElementStyleValue = getElementStyleValue
@@ -114,13 +109,16 @@ function install (Vue) {
   Vue.prototype._dataURLtoFile = dataURLtoFile
   Vue.prototype._fileOrBlobToDataURL = fileOrBlobToDataURL
   Vue.prototype._fileToBlob = fileToBlob
-  Vue.prototype._isMobile = isMobile
-  Vue.prototype._queryAnalysis = queryAnalysis
+  Vue.prototype._debounce = debounce
+  Vue.prototype._deepCopy = deepCopy
+  Vue.prototype._diff = diff
   Vue.prototype._randomStr = randomStr
-  Vue.prototype._sereinInstall = sereinInstall
   Vue.prototype._throttle = throttle
   Vue.prototype._tryFunc = tryFunc
   Vue.prototype._tryPromiseFunc = tryPromiseFunc
+  Vue.prototype._isBrower = isBrower
+  Vue.prototype._isMobile = isMobile
+  Vue.prototype._queryAnalysis = queryAnalysis
 
 }
 
