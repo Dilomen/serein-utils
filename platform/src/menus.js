@@ -25,7 +25,7 @@ const menus = [
     name: '方法',
     submenus: [
       { "name": "debounce", "url": "/fn/debounce" },
-      { "name": "deepCopy", "url": "/fn/deepCopy" },
+      // { "name": "deepCopy", "url": "/fn/deepCopy" },
       { "name": "diff", "url": "/fn/diff" },
       { "name": "isMobile", "url": "/fn/isMobile" },
       { "name": "queryAnalysis", "url": "/fn/queryAnalysis" },
