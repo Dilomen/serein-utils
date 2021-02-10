@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 npm run build
 git add .
-git commit -m '文档补全'
+git commit -m '更新'
 git push
 
 cd platform
