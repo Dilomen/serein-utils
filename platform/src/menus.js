@@ -48,20 +48,16 @@ const menus = [
   {
     name: 'DOM相关',
     submenus: [
-      { "name": "addClass", "url": "/dom/addClass" },
-      { "name": "getElementStyle", "url": "/dom/getElementStyle" },
-      { "name": "getElementStyleValue", "url": "/dom/getElementStyleValue" },
-      { "name": "getParentElement", "url": "/dom/getParentElement" },
-      { "name": "getParentWithStyle", "url": "/dom/getParentWithStyle" },
-      { "name": "getScrollHeight", "url": "/dom/getScrollHeight" },
-      { "name": "getScrollTop", "url": "/dom/getScrollTop" },
-      { "name": "loasdScript", "url": "/dom/loasdScript" },
-      { "name": "nextElement", "url": "/dom/nextElement" },
       { "name": "preventDefault", "url": "/dom/preventDefault" },
+      { "name": "stopPropagation", "url": "/dom/stopPropagation" },
+      { "name": "addClass", "url": "/dom/addClass" },
       { "name": "readClass", "url": "/dom/readClass" },
       { "name": "removeClass", "url": "/dom/removeClass" },
       { "name": "replaceClass", "url": "/dom/replaceClass" },
-      { "name": "stopPropagation", "url": "/dom/stopPropagation" }
+      { "name": "getElementStyle", "url": "/dom/getElementStyle" },
+      { "name": "getParentElement", "url": "/dom/getParentElement" },
+      { "name": "loasdScript", "url": "/dom/loasdScript" },
+      { "name": "nextElement", "url": "/dom/nextElement" },
     ]
   },
 ]

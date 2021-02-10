@@ -7,19 +7,27 @@
   <title>Document</title>
 </head>
 <script src="../lib/index.js"></script>
+<style>
+  #app {
+    height: 100px;
+  }
+  #app::before {
+    content: 'Hello';
+    width: 100px;
+  }
+</style>
 
 <body>
+  <div id="app" style="width: 200px;">
 
+  </div>
 </body>
 <script>
-  function test(a, b) {
-    console.log(a + b);
-  }
-  const fn = sereinUtils.randomStr(12)
-  console.log(fn)
-  // setTimeout(() => {
-  //   fn('Hello', ' World'); // Hello World
-  // }, 600);
+  const _oDiv = document.getElementById('app')
+  sereinUtils.getElementStyle(_oDiv, 'height') // 100px
+
+  console.log(sereinUtils.getElementStyle(_oDiv, 'width')) // 200px;
+  console.log(sereinUtils.getElementStyle(_oDiv, 'content', '::before')) // 200px;
 </script>
 
 </html>
