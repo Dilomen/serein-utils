@@ -24,6 +24,8 @@ import dataURLToBlob from './src/file/dataURLToBlob.js'
 import dataURLtoFile from './src/file/dataURLtoFile.js'
 import fileOrBlobToDataURL from './src/file/fileOrBlobToDataURL.js'
 import fileToBlob from './src/file/fileToBlob.js'
+import compose from './src/fn/compose.js'
+import composeSync from './src/fn/composeSync.js'
 import debounce from './src/fn/debounce.js'
 import deepCopy from './src/fn/deepCopy.js'
 import diff from './src/fn/diff.js'
@@ -60,6 +62,8 @@ dataURLToBlob,
 dataURLtoFile,
 fileOrBlobToDataURL,
 fileToBlob,
+compose,
+composeSync,
 debounce,
 deepCopy,
 diff,
@@ -97,6 +101,8 @@ function install(Vue) {
   Vue.prototype._dataURLtoFile = dataURLtoFile
   Vue.prototype._fileOrBlobToDataURL = fileOrBlobToDataURL
   Vue.prototype._fileToBlob = fileToBlob
+  Vue.prototype._compose = compose
+  Vue.prototype._composeSync = composeSync
   Vue.prototype._debounce = debounce
   Vue.prototype._deepCopy = deepCopy
   Vue.prototype._diff = diff

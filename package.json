@@ -1,6 +1,6 @@
 {
   "name": "serein-utils",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "一些开发中常用的方法",
   "main": "./lib/index.js",
   "license": "MIT",
