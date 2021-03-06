@@ -29,6 +29,7 @@ import composeSync from './src/fn/composeSync.js'
 import debounce from './src/fn/debounce.js'
 import deepCopy from './src/fn/deepCopy.js'
 import diff from './src/fn/diff.js'
+import formatNumber from './src/fn/formatNumber.js'
 import isBrower from './src/fn/isBrower.js'
 import isMobile from './src/fn/isMobile.js'
 import queryAnalysis from './src/fn/queryAnalysis.js'
@@ -67,6 +68,7 @@ composeSync,
 debounce,
 deepCopy,
 diff,
+formatNumber,
 isBrower,
 isMobile,
 queryAnalysis,
@@ -106,6 +108,7 @@ function install(Vue) {
   Vue.prototype._debounce = debounce
   Vue.prototype._deepCopy = deepCopy
   Vue.prototype._diff = diff
+  Vue.prototype._formatNumber = formatNumber
   Vue.prototype._isBrower = isBrower
   Vue.prototype._isMobile = isMobile
   Vue.prototype._queryAnalysis = queryAnalysis

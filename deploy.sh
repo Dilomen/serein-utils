@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 npm run build
 git add .
-git commit -m '添加复合函数方法'
+git commit -m '更新'
 git push
 
 cd platform

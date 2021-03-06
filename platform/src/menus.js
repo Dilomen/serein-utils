@@ -26,6 +26,7 @@ const menus = [
     submenus: [
       { "name": "debounce", "url": "/fn/debounce" },
       // { "name": "deepCopy", "url": "/fn/deepCopy" },
+      { "name": "formatNumber", "url": "/fn/formatNumber" },
       { "name": "compose", "url": "/fn/compose" },
       { "name": "composeSync", "url": "/fn/composeSync" },
       { "name": "diff", "url": "/fn/diff" },
